@@ -41,3 +41,6 @@ var flipAndInvertImage = function(A) {
 };
 
 console.log( flipAndInvertImage( [[1,1,0],[1,0,1],[0,0,0]]));
+
+
+//END OF PROGRAM
