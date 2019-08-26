@@ -26,7 +26,7 @@ function reverse(Arr) {
 
 function invert(Arr) {
     for(let j = 0 ; j < Arr.length ; j++) {
-        Arr[j] = !Arr[j];
+        Arr[j] = Arr[j] == 0 ? 1 : 0;
     }
     return Arr;
 }
