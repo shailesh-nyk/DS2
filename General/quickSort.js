@@ -32,6 +32,6 @@ function partition(arr, start, end, pivot) {
     return start;
 }
 
-let inputArr = [8, 1 , 6 , 3 , 4 , 12 , 0];
+let inputArr = [5,7,1,8,2];
 console.log('Input array is:    ' + inputArr);
 console.log('Sorted array is:   ' + sort(inputArr));
