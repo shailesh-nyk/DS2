@@ -2,23 +2,18 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var result = [];
-var permute = function(nums) {
-    permuteRecursive(nums, []);
-};
-var permuteRecursive = function(useSet, currSet) {
+var permute = function(useSet, currSet = [] , result = []) {
+    useSet = useSet.split('');
     if(useSet.length == 0) {
-        console.log(currSet);
-        result.push(currSet);
-        return;
-    } else {
-        for(let i = 0 ; i < useSet.length ; i++) {
-            currSet.push(useSet[i]);
-            useSet.splice(i,1);
-            permuteRecursive(useSet, currSet);
-        }
-        return;
+        result.push(currSet.join(''));
     }
-}
+    for(let i = 0 ; i < useSet.length ; i++) {
+        const newUseSet = useSet.filter((x,index) => index !== i);
+        currSet.push(useSet[i]);
+        permute(newUseSet.join(''), currSet, result);
+        currSet.pop();
+    }
+    return result;
+};
 
-permute([1,2,3]);
+console.log(permute("abc"));
